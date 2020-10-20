@@ -8,18 +8,20 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
-
 var scores, roundScore, activePlayer, currentScore;
 
 scores = [0, 0];
 roundScore = 0;
 activePlayer = 0;
 
+document.querySelector('.dice').style.display = "none"; 
+
 function displayCurrent(){
     document.querySelector('#current-' + activePlayer).textContent = roundScore;
 } 
 
 function diceRoll(){
+    document.querySelector('.dice').style.display = 'block';
     holder =  Math.floor(Math.random() * 6) + 1; 
     document.querySelector('.dice').src = "dice-" + holder + ".png"; 
     if(holder != 1 && activePlayer == 0) {
@@ -53,6 +55,8 @@ function hold(){
                 roundScore = 0;
                 displayCurrent();
                 activePlayer = 1;
+                document.querySelector('.player-0-panel').classList.remove('active');
+                document.querySelector('.player-1-panel').classList.add('active');
             }else if(scores[activePlayer] >= 100){
                 console.log('you won player one');
             }
@@ -63,6 +67,8 @@ function hold(){
                 roundScore = 0;
                 displayCurrent();
                 activePlayer = 0;
+                document.querySelector('.player-1-panel').classList.remove('active');
+                document.querySelector('.player-0-panel').classList.add('active');
             }else if(scores[activePlayer] >= 100){
                 console.log('you won player two');
             }
@@ -73,10 +79,14 @@ function hold(){
 
 
 function newGame(){
-    document.querySelector('#score-0').innerHTML = 0;
-    document.querySelector('#score-1').innerHTML = 0;
-    document.querySelector('#current-0').innerHTML = 0;
-    document.querySelector('#current=1').innerHTML = 0;
+    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('#score-0').textContent = 0;
+    document.querySelector('#score-1').textContent = 0;
+    document.querySelector('#current-0').textContent = 0;
+    document.querySelector('#current=1').textContent = 0;
     activePlayer = 0;
 }
+
+
+
 

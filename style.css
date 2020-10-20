@@ -143,6 +143,7 @@ i {
 
 .dice {
     position: absolute;
+    display: block;
     left: 50%;
     top: 178px;
     transform: translateX(-50%);
