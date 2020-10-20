@@ -15,8 +15,6 @@ scores = [0, 0];
 roundScore = 0;
 activePlayer = 0;
 
-document.getElementById("myDIV").style.display = "none";
-
 function displayCurrent(){
     document.querySelector('#current-' + activePlayer).textContent = roundScore;
 } 
@@ -78,28 +76,3 @@ function newGame(){
     activePlayer = 0;
 }
 
-function hide(){
-    document.getElementById("work").style.display = "none";
-}
-/*
-function diceRolls(){
-    holder =  Math.floor(Math.random() * 6) + 1;  
-    if(holder != 1 && activePlayer == 0) {
-        roundScore = roundScore + holder;
-        document.querySelector('#current-0').textContent = roundScore;
-    } else if(holder != 1 && activePlayer == 1){
-        roundScore = roundScore + holder;
-        document.querySelector('#current-1').textContent = roundScore;
-    } else{
-        if(activePlayer == 0){
-            roundScore = 0;
-            document.querySelector('#current-0').textContent = roundScore;
-            activePlayer = 1;
-        } else{
-            roundScore = 0;
-            document.querySelector('#current-1').textContent = roundScore;
-            activePlayer = 0;
-        }
-    }
-}
-*/ 
