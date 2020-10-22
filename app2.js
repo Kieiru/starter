@@ -26,7 +26,7 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         changePlayer();
     }
     
-})
+});
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
     if (gamePlaying) {
